@@ -1,0 +1,24 @@
+use PHPUnit\Framework\TestCase;
+
+class ExamHallControllerTest extends TestCase
+{
+    // your test methods will go here
+
+    public function testGenerateSeatingArrangement()
+{
+    // create a new instance of your ExamHallController
+    $controller = new ExamHallController();
+
+    // create some test data
+    $request = new Request();
+    $examHallId = 1;
+
+    // call the generateSeatingArrangement function with the test data
+    $result = $controller->generateSeatingArrangement($request, $examHallId);
+
+    // add assertions to test the result
+    $this->assertNotNull($result);
+    $this->assertIsString($result);
+}
+
+}

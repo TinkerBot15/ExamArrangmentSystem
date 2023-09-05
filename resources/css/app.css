@@ -1,0 +1,44 @@
+/* Seat styles */
+.seatCharts-seat {
+    display: inline-block;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  .seatCharts-seat.available {
+    background-color: #4caf50;
+  }
+  
+  .seatCharts-seat.available:hover {
+    background-color: #45a049;
+  }
+  
+  .seatCharts-seat.focused {
+    background-color: #2196f3;
+  }
+  
+  .seatCharts-seat.selected {
+    background-color: #f44336;
+  }
+  
+  .seatCharts-seat.unavailable {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+  }
+  
+  /* Row styles */
+  .seating-row {
+    margin-bottom: 10px;
+  }
+  
+  /* Container styles */
+  #seating-chart {
+    text-align: center;
+  }
+  
