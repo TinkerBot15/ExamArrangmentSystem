@@ -13,6 +13,7 @@ class CreateSeatingArrangementsTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('examination_hall_id');
             $table->unsignedInteger('seat_number');
+            $table->string('phone_number')->nullable();
             $table->timestamps();
 
             $table->foreign('student_id')

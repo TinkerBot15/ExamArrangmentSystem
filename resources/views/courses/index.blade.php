@@ -16,7 +16,7 @@
         <tbody>
             @foreach ($courses as $course)
             <tr>
-                <td>{{ $course->name }}</td>
+                <td>{{ $course->title }}</td>
                 <td>{{ $course->code }}</td>
                 <td>{{ $course->department }}</td>
                 <td>

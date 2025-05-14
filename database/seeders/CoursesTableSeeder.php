@@ -54,7 +54,7 @@ class CoursesTableSeeder extends Seeder
 
         foreach ($courses as $course) {
             DB::table('courses')->insert([
-                'name' => $course['name'],
+                'title' => $course['name'],
                 'code' => $course['code'],
                 'department' => $course['department'],
                 'created_at' => now(),

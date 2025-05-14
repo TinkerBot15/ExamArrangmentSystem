@@ -14,7 +14,7 @@ class AddExaminationTimetableIdToSeatingArrangementsTable extends Migration
     public function up()
     {
         Schema::table('seating_arrangements', function (Blueprint $table) {
-            // $table->unsignedBigInteger('examination_timetable_id')->nullable();
+            $table->unsignedBigInteger('examination_timetable_id')->nullable();
 
             $table->foreign('examination_timetable_id')
                 ->references('id')->on('examination_timetable')

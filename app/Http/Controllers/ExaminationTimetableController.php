@@ -95,7 +95,7 @@ class ExaminationTimetableController extends Controller
             'exam_end_time' => $request->exam_end_time,
             'examination_hall_id' => $request->examination_hall_id,
             'course_code' => Course::whereIn('id', $request->courses)->pluck('code')->implode(','),
-            'course_title' => Course::whereIn('id', $request->courses)->pluck('name')->implode(','),
+            'course_title' => Course::whereIn('id', $request->courses)->pluck('title')->implode(','),
         ]);
 
         // Retrieve the selected invigilator IDs from the form data
@@ -125,7 +125,7 @@ class ExaminationTimetableController extends Controller
         ->join('course_student', 'students.id', '=', 'course_student.student_id')
         ->join('courses', 'course_student.course_id', '=', 'courses.id')
         ->whereIn('course_student.course_id', $attachedIds)
-        ->select('students.id', 'students.name', 'students.matric_number', 'students.department', 'students.phone_number', 'courses.name as course', 'courses.code as course_code')
+        ->select('students.id', 'students.name', 'students.matric_number', 'students.department', 'students.phone_number', 'courses.title as course', 'courses.code as course_code')
         ->distinct()
         ->get()
         ->map(function ($item) {
@@ -218,6 +218,7 @@ class ExaminationTimetableController extends Controller
     // $seatLabels now contains the labels for each seat in the hall
 
     $studentData = $this->getStudentData($timetableId);
+    // dd($studentData);
 
     $adjacencyMatrix = $this->adjacencyMatrix($seatLabels, $rows, $columns);
 

@@ -41,4 +41,43 @@
   #seating-chart {
     text-align: center;
   }
+
+  .chair-icon {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/chair.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+}
+.seatCharts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .seating-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Button styles */
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
   

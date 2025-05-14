@@ -9,6 +9,7 @@ class AddForeignKeyToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('examination_timetable_id')->nullable();
             $table->foreign('examination_timetable_id')->references('id')->on('examination_timetable');
         });
     }
